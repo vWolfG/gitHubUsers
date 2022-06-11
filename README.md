@@ -5,7 +5,7 @@
 
 
 ![Screenshots](./Screenshots.png)
-<img src="./Example.gif" width="375" height="667"/>
+<img src="./Example.gif" width="187" height="333"/>
 
 The app shows the list of GitHub users and their short details.
 
