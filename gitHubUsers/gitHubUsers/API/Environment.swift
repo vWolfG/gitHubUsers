@@ -6,5 +6,5 @@
 //
 
 struct Environment {
-    static let githubToken = ""
+    static let githubToken = "YOUR_TOKEN"
 }
