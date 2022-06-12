@@ -16,11 +16,6 @@ final class SkeletonView: UIView {
     
     private lazy var gradientLayer: CAGradientLayer = {
         let gradient = CAGradientLayer()
-        gradient.colors = [
-            Colors.primarySkeleton.cgColor,
-            Colors.secondarySkeleton.cgColor,
-            Colors.primarySkeleton.cgColor
-        ]
         gradient.locations = [0.0, 0.0, 0.25]
         gradient.startPoint = CGPoint(x: 0, y: 0.5)
         gradient.endPoint = CGPoint(x: 1, y: 0.5)
@@ -44,11 +39,16 @@ final class SkeletonView: UIView {
     init() {
         super.init(frame: .zero)
         setupUI()
+        updateColors()
     }
     
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        updateColors()
     }
     
     override func layoutSubviews() {
@@ -63,6 +63,14 @@ final class SkeletonView: UIView {
     private func setupUI() {
         clipsToBounds = true
         layer.addSublayer(gradientLayer)
+    }
+    
+    private func updateColors() {
+        gradientLayer.colors = [
+            Colors.primarySkeleton.cgColor,
+            Colors.secondarySkeleton.cgColor,
+            Colors.primarySkeleton.cgColor
+        ]
     }
     
     func startAnimation() {

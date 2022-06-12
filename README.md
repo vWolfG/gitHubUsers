@@ -5,13 +5,15 @@
 
 
 ![Screenshots](./Screenshots.png)
-![Gif](./Example.gif)
+![Gif](./1.gif)![Gif](./2.gif)![Gif](./3.gif)
 
 
 The app shows the list of GitHub users and their short details.
 
 ## Features
 
+- Skeleton loading
+- Loading users by page
 - Search and filter
 - No external dependencies
 
